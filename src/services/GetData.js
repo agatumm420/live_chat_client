@@ -1,17 +1,17 @@
-export function PostData(type, userData) {
-    let BaseURL = 'http://localhost/react-php/api/index.php';
+export function GetData(endpoint) {
+    let BaseURL = 'http://127.0.0.1:8000/api/';
     return new Promise((resolve, reject) =>{
     
-    fetch(BaseURL+'?tp='+type,
+    fetch(BaseURL+endpoint,
     {
     
-    method: 'POST',
+    method: 'GET',
     headers:
     {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
     },
-    body:JSON.stringify(userData)
+    
     })
     .then((response) => response.json()
     .then((res) => {
